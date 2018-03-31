@@ -30,7 +30,7 @@
 				<td>Endereço:</td><td> <input type="text" name="endereco"  value="${param.endereco}"/></td>
 			</tr><tr>
 				<td>
-				   Data Nascimento:</td><td> <caelum:campoData id="dataNascimento" data="${param.dataNascimento}"></caelum:campoData> 
+				    Data Nascimento:</td><td> <caelum:campoData id="dataNascimento" data="${param.dataNascimento}"></caelum:campoData> 
 				  
 				</td>
 			</tr><tr>	

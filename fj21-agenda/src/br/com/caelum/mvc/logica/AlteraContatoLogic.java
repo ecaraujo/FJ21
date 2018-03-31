@@ -1,14 +1,12 @@
 package br.com.caelum.mvc.logica;
 
+import java.sql.Connection;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.mysql.jdbc.Connection;
 
 import br.com.caelum.agenda.dao.ContatoDao;
 import br.com.caelum.agenda.modelo.Contato;
@@ -22,11 +20,7 @@ public class AlteraContatoLogic implements Logica{
 		ContatoDao dao = new ContatoDao(conn);	
 		Contato contato = new Contato();
 		
-		try{
-		   contato.setId(Long.parseLong(req.getParameter("id")));
-		}catch (RuntimeException e){
-			System.out.println("Error: " + e);  
-		}
+		contato.setId(Long.parseLong(req.getParameter("id")));
 		contato.setNome(req.getParameter("nome"));
 		contato.setEmail(req.getParameter("email"));
 		contato.setEndereco(req.getParameter("endereco"));

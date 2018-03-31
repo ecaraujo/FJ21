@@ -19,8 +19,11 @@ public class AlteraContatoLogic implements Logica{
 		Connection conn = (Connection) req.getAttribute("conexao");
 		ContatoDao dao = new ContatoDao(conn);	
 		Contato contato = new Contato();
-		
-		contato.setId(Long.parseLong(req.getParameter("id")));
+		try{
+			contato.setId(Long.parseLong(req.getParameter("id")));
+		}catch(NumberFormatException e){
+			System.out.println("error: " + e);
+		}
 		contato.setNome(req.getParameter("nome"));
 		contato.setEmail(req.getParameter("email"));
 		contato.setEndereco(req.getParameter("endereco"));

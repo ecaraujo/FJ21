@@ -20,7 +20,7 @@
 			</tr><tr>
 				<td>Nome:</td><td><input type="text" name="nome" value="${param.nome}"/></td><br/>
 			</tr><tr>
-				<td>E-mail:</td><td> <input type="text" name="email" value="${param.email}" /></td><br/>
+				<td>E-mail:</td><td> <input type="email" name="email" value="${param.email}" /></td><br/>
 			</tr><tr>
 				<td>Endereço:</td><td> <input type="text" name="endereco"  value="${param.endereco}"/></td><br/>
 			</tr><tr>

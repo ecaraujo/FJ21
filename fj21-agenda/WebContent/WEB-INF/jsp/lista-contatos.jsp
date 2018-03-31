@@ -18,7 +18,7 @@
 <title>Lista Contatos</title>
 </head>
 <body>
- 	<c:import url="cabecalho.jsp"/>
+<main class="container">
 	<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao"></jsp:useBean>
 
 	<table class="table table-striped">
@@ -28,6 +28,8 @@
 				<th scope="col">E-Mail</th>
 				<th scope="col">Endereco</th>
 				<th scope="col">Data Nascimento</th>
+				<th scope="col"></th>
+				<th scope="col"></th>
 			</tr>
 		</thead>
 		<c:forEach var="contato" items="${dao.lista}">
@@ -60,6 +62,6 @@
 			</tbody>
 		</c:forEach>
 	</table>
-<c:import url="rodape.jsp"/>
+<main>	
 </body>
 </html>

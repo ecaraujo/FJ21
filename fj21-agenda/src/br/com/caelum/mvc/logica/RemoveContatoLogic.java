@@ -24,7 +24,7 @@ public class RemoveContatoLogic implements Logica{
 		
 		dao.exclui(contato);
 		
-		return "mvc?logica=ListaContatosLogic";
+		return "mvc?logica=AdicionaContatoLogic";
 	}
 
 }

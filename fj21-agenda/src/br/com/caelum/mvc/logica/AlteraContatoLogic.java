@@ -43,7 +43,7 @@ public class AlteraContatoLogic implements Logica{
 			dao.atualiza(contato);			
 		}
 		
-		return "mvc?logica=ListaContatosLogic";
+		return "mvc?logica=AdicionaContatoLogic";
 		
 	}
 	

@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -48,7 +49,8 @@ public class AdicionaContatoServlet extends HttpServlet{
 			e1.printStackTrace();
 		}
 		
-		pw.println("Contato "+ contato.getNome() + " salvo com sucesso!");
+		RequestDispatcher rd = req.getRequestDispatcher("/contato-adicionado.jsp");
+		rd.forward(req, res);
 	}
 	
 

@@ -18,7 +18,6 @@
 <title>Lista Contatos</title>
 </head>
 <body>
-	<jsp:useBean id="dao" class="br.com.caelum.dao.ContatoDao" />
 	<main class="container">
 	<table class="table table-striped">
 		<thead>
@@ -27,27 +26,37 @@
 				<th scope="col">E-Mail</th>
 				<th scope="col">Endereco</th>
 				<th scope="col">Data Nascimento</th>
+				<th></th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="contato" items="${dao.list}">
+			<c:forEach var="contato" items="${contatos}">
 				<tr>
 					<td>${contato.nome}</td>
 					<td>
-					    <c:if test="${not empty contato.email}"> 
-					        <a href="mailto:${contato.email}">${contato.email}</a>				
-					    </c:if>
-					    <c:if test="${empty contato.email}">
-					        E-mail náo informado
-					    </c:if>
+						<%--<c:if test="${not empty contato.email}">  --%> <%-- 					        <a href="mailto:${contato.email}">${contato.email}</a>				 --%>
+						<%-- </c:if> --%> <%-- 					    <c:if test="${empty contato.email}"> --%>
+						<!-- E-mail náo informado --> <%-- 					    </c:if> --%>
+						<c:choose>
+							<c:when test="${not empty contato.email}">
+								<a href="mailto:${contato.email}">${contato.email}</a>
+							</c:when>
+							<c:otherwise>
+					    		E-mail náo informado
+					    	</c:otherwise>
+						</c:choose>
 					</td>
 					<td>${contato.endereco}</td>
-					<td><fmt:formatDate value="${contato.dataNascimento.time}" pattern="dd/MM/yyyy" /></td>
-
-				</tr>
+					<td><fmt:formatDate value="${contato.dataNascimento.time}"
+							pattern="dd/MM/yyyy" /></td>
+					<td><a href="mvc?logica=RemoveContatoLogic&id=${contato.id}">Remover</a>
+					</td>
+						</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 	</main>
 </body>
+<c:import url="rodape.jsp" />
 </html>
